@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", monospace;
+}
+
+.app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background-color: #dfdfdf;
+}
+
+/* Game */
+.game {
+  background-color: #000000cc;
+  border-radius: 10px;
+  box-shadow: 5px 10px 15px #0000005d;
+}
+
+.game-card {
+  padding: 0 20px 20px 20px;
+  width: 300px;
+}
+
+.game-head {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 10px 0; */
+  margin-bottom: 20px;
+}
+
+.game-head h3 {
+  color: #ffffff51;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.game-head h3.active {
+  position: relative;
+  color: #ffd000;
+}
+
+.game-head h3.active::before {
+  content: "";
+  height: 5px;
+  width: 100%;
+  background-color: #ffd000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.game-head .game-winner {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.game-winner b {
+  color: #07e000;
+  margin: 0 5px;
+}
+
+.game-head .game-draw {
+  color: #00ffea;
+  width: 100%;
+  text-align: center;
+}
+
+.game-btn {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 2px;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.game-btn:hover {
+  color: #00c3ff;
+  border-color: #00c3ff;
+}
+
+.game-btn:disabled {
+  color: #ffffff51;
+  border-color: #ffffff51;
+  cursor: not-allowed;
+}
+
+/* Board */
+.board {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, calc(100% / 3));
+  grid-template-rows: repeat(3, 85px);
+  border-collapse: collapse;
+}
+
+/* Each Square */
+.square {
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  margin: 3px;
+  color: #fff;
+  font-size: 3rem;
+}
+
+.square:hover {
+  background-color: #bc14ff;
+}
+
+.square-filled:hover {
+  background-color: #d10000;
+}
