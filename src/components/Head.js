@@ -1,6 +1,6 @@
 import React from "react";
 
-function GameHead({ winner, turn }) {
+function Head({ winner, turn }) {
   return (
     <div className="game-head">
       {winner ? (
@@ -21,4 +21,4 @@ function GameHead({ winner, turn }) {
   );
 }
 
-export default GameHead;
+export default Head;

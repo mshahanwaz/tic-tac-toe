@@ -2,7 +2,8 @@ import React from "react";
 import { useState } from "react";
 import calculateWinner from "../utils/winner";
 import Board from "./Board";
-import GameHead from "./GameHead";
+import ResetButton from "./ResetButton";
+import Head from "./Head";
 
 function Game() {
   const [squares, setSquares] = useState([]);
@@ -36,13 +37,11 @@ function Game() {
   return (
     <div className="game">
       <div className="game-card">
-        <GameHead winner={winner} turn={turn} />
-        <div className="game-board">
-          <Board squares={squares} handleClick={handleClick} />
-        </div>
-        <button className="game-btn" disabled={!reset} onClick={handleReset}>
+        <Head winner={winner} turn={turn} />
+        <Board squares={squares} handleClick={handleClick} />
+        <ResetButton reset={reset} handleReset={handleReset}>
           Reset
-        </button>
+        </ResetButton>
       </div>
     </div>
   );
