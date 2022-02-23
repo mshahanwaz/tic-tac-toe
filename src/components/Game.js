@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import calculateWinner from "../utils/winner";
+import checkWinner from "../utils/winner";
 import Board from "./Board";
 import ResetButton from "./ResetButton";
 import Head from "./Head";
@@ -13,10 +13,10 @@ function Game() {
 
   function handleClick(i) {
     if (!winner && !squares[i]) {
-      let updateSquares = squares;
-      updateSquares[i] = turn ? "X" : "O";
-      setSquares(updateSquares);
-      let win = calculateWinner(updateSquares);
+      let updatedSquares = squares;
+      updatedSquares[i] = turn ? "X" : "O";
+      setSquares(updatedSquares);
+      let win = checkWinner(updatedSquares);
       if (win) {
         setWinner(win);
         setReset(true);
