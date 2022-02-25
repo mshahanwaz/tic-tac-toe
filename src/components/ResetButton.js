@@ -1,6 +1,6 @@
 import React from "react";
 
-function Button(props) {
+function ResetButton(props) {
   const { reset, handleReset, children } = props;
   return (
     <button className="game-btn" disabled={!reset} onClick={handleReset}>
@@ -9,4 +9,4 @@ function Button(props) {
   );
 }
 
-export default Button;
+export default ResetButton;
